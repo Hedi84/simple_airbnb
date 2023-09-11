@@ -1,0 +1,17 @@
+<div class='form'>
+  <%= form_with model: @flat do |f| %>
+    <div class='mb-3'> <%= f.label :name %> </div>
+    <div class='mb-3'> <%= f.text_field :name %> </div>
+    <div class='mb-3'> <%= f.label :address %> </div>
+    <div class='mb-3'> <%= f.text_field :address %> </div>
+    <div class='mb-3'> <%= f.label :description %> </div>
+    <div class='mb-3'> <%= f.text_field :description %> </div>
+    <div class='mb-3'> <%= f.label :price_per_night %> </div>
+    <div class='mb-3'> <%= f.number_field :price_per_night %> </div>
+    <div class='mb-3'> <%= f.label :url %> </div>
+    <div class='mb-3'> <%= f.text_field :url %> </div>
+    <div class='mb-3'> <%= f.label :number_of_guests %> </div>
+    <div class='mb-3'> <%= f.number_field :number_of_guests %> </div>
+    <div class='mb-3'> <%= f.submit %> </div>
+  <% end %>
+</div>

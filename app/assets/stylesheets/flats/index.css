@@ -1,0 +1,37 @@
+.most-top {
+    color: white;
+    background-color: blue;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10%;
+}
+
+.top {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a:link {
+    text-decoration: none;
+    color: blue;
+   }
+   a:hover {
+       text-decoration: underline;
+   }
+
+.properties {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 5%;
+    align-content: space-around;
+}
+
+.flat-image {
+  max-width: 50%;
+  height: auto;
+}

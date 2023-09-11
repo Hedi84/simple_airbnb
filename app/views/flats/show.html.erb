@@ -1,0 +1,13 @@
+<div class='container'> 
+  <h1><%= @flat.name %></h1>
+  <img src= <%= @flat.property_image%> class="flat-image">
+  <h2><%= @flat.description %></h2>
+  <h2>This property can be rented for £<%= @flat.price_per_night %> per night</h2>
+  <h2>This property is suitable for <%= @flat.number_of_guests %> people</h2>
+
+  <div class="d-flex flex-row mb-3">
+    <% if policy(@flat).edit? %>
+      <div class="p-2"><%= link_to "Edit", edit_flat_path(@flat)%></div>
+      <div class="p-2"><%= link_to "Remove", flat_path(@flat), data: { turbo_method: :delete } %></div>
+    <% end %>
+  </div>

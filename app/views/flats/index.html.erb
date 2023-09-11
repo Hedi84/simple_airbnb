@@ -1,0 +1,38 @@
+<div class='top'>
+  <div class='item-space'> 
+    <a href="flats" class="btn btn-primary">Reload available properties</a>
+  </div>
+
+  <div class='title'> <h2> Available Properties </h2></div>
+
+  <div class='item-space'>
+    <% if policy(Flat).new? %>
+      <h3><%= link_to 'Add Your Property now!', new_flat_path(@flat) %></h3>
+    <% end %>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: root_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<div class='properties'>
+  <% @flats.each do |flat| %>
+    <div class="card" style="width: 18rem; margin-top:2%;">
+      <img src= <%=flat.property_image%> class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%=flat.name%></h5>
+        <p class="card-text"><%=flat.description.truncate(27)%></p>
+        <%= link_to "check out #{flat.name}", flat_path(flat) %>
+      </div>
+    </div>
+  <%end%>
